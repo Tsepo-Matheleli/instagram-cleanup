@@ -4,3 +4,4 @@ env/
 __pycache__/
 gekodriver.log
 ..gitignore.swp
+code_holder.py
