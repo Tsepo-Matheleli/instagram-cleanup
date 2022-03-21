@@ -1,6 +1,4 @@
 from selenium import webdriver
-
-# from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as condition
 from selenium.webdriver.common.by import By as by
 from selenium.webdriver.support.wait import WebDriverWait as wait
@@ -36,9 +34,6 @@ class instagram_unfollow:
         # Get list of all the people who are followers
         self.driver.execute_script("window.scrollTo(0,5000);")
         followers_list = self.find_element(by.CLASS_NAME, "PZuss", False, 60)
-        # self.driver.find_element_by_class_name(
-        #     "PZuss",
-        # )
         print(followers_list)
 
     def find_element(self, method, path, button=False, wait_time=16):
@@ -54,22 +49,10 @@ class instagram_unfollow:
 
     def execute_cleanup(self):
         driver = self.driver
-        # FOLLOWERS = "followers"
-        # FOLLOWING = "following"
         driver.get("https://www.instagram.com/")
         self.login()
         self.get_my_user_account()
         self.get_people_who_follow_me()
 
 
-# def get_followers_and_following_links(self, x_path, followers_flag):
-#     buttons = self.find_element(by.XPATH, x_path)
-#     return [
-#         button
-#         for button in buttons
-#         if followers_flag in button.get_attribute("href")
-#     ]
 
-# def perform_action(self, link_to_page):
-#     action = ActionChains(self.driver)
-#     return action.click(link_to_page).perform()
