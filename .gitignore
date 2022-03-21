@@ -2,3 +2,5 @@ main.py
 drivers/
 env/
 __pycache__/
+gekodriver.log
+..gitignore.swp
