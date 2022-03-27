@@ -22,8 +22,8 @@ class instagram_unfollow:
 
     def get_main_account(self):
         # Removes the not now pop ups that show when login into instagram
-        # self.find_element(by.XPATH, "//button[contains(text(), 'Not Now')]", True)
-        # self.find_element(by.XPATH, "//button[contains(text(), 'Not Now')]", True)
+        self.execute_element(by.XPATH, "//button[contains(text(), 'Not Now')]", True)
+        self.execute_element(by.XPATH, "//button[contains(text(), 'Not Now')]", True)
         self.execute_element(by.XPATH, f"//a[@href = '/{self.username}/']", True)
 
     def get_main_account_followers(self):
@@ -51,8 +51,8 @@ class instagram_unfollow:
         driver = self.driver
         driver.get("https://www.instagram.com/")
         self.login()
-        self.get_my_user_account()
-        self.get_people_who_follow_me()
+        self.get_main_account()
+        self.get_main_account_followers()
 
 
 
